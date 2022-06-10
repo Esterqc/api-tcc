@@ -1,6 +1,6 @@
-CREATE DATABASE Sistema_para_Dentistass;
+CREATE DATABASE Dentista;
 
-USE Sistema_para_Dentistass;
+USE Dentista;
 
 CREATE TABLE TB_Funcionário(
 	ID_funcionario       INT PRIMARY KEY AUTO_INCREMENT,
