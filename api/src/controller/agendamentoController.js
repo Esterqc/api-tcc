@@ -7,7 +7,10 @@ server.post('/agendar',async (req,resp) =>{
     try{
         const novoAgendarmento = req.body;
 
-        const Agendarconsulta = await InserirAgendamento(novoAgendarmento)
+        if(!novoAgendarmento.nome)
+        throw new Error('Nome Do Paciente é obrigatorio!')
+
+        const Agendarconsulta = await InserirAgendamento(novoAgendarmento);
 
         resp.send(Agendarconsulta);
     } catch(err){
