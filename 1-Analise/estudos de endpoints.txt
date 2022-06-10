@@ -78,7 +78,7 @@ CS05(alterar dados da consulta) /put     /agendamento/:id
     "nome": "?",
    "servico":"?",
    "agendamento":"?",
-   "novo agendamento:"?"
+   "novo agendamento":"?"
 }
 
 204 no content

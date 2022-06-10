@@ -12,3 +12,41 @@ export async function InserirAgendamento(agendar) {
 
   return agendar;
 }
+
+ export async function  pesquisardatadaconsulta () {
+     const comando =
+     `SELECT  ID_agendamento		'id',
+     NM_paciente  	        '       nome',
+      DS_CPF                        'cpf',
+      DS_servico     	            'servico'
+    FROM TB_agendamento
+    WHERE DT_agendamento	=  like ?`;
+
+    const [linhas] = await con.query(comando, [`%${data}%`])
+    return linhas
+ }
+
+ export async function excluirconsulta(id){
+    const comando = 
+    `
+    DELETE FROM tb_agendamento 
+    WHERE id_agendamento = ?;
+    `
+
+    const [resposta] = await con.query (comando, [id]);
+    return resposta.affectedRows
+}
+
+export async function alterardadosdaconsulta(id, agendamento){
+    const comando = 
+    `
+    UPDATE TB_agendamento 
+   SET NM_paciente   	 = ?,
+     DS_servico     	=?,
+	DT_agendamento   	= ?,
+     DT_agendamento      = ?
+ WHERE ID_agendamento	 = ?;
+    `
+    const [resposta] = await con.query (comando, [agendamento.nome, agendamento.servico,agendamento.agendamento, agendamento.agendamento,  id]);
+    return resposta.affectedRows
+}
