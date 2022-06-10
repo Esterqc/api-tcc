@@ -1,6 +1,7 @@
 import 'dotenv/config'
 
 import usuarioController from './controller/usuarioController.js';
+import agendamentoController from './controller/agendamentoController.js';
 
 import express from 'express'
 import cors from 'cors'
@@ -14,6 +15,7 @@ server.use(express.json());
 
 // configuração dos endpoints
 server.use(usuarioController);
+server.use(agendamentoController);
 
 
 
