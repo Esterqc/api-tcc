@@ -1,4 +1,8 @@
-USE Sistema_para_Dentistass;
+SE Dentista;
+
+select * from TB_funcionário;
+select * from TB_Agendamento;
+
 
 
 
@@ -10,7 +14,7 @@ INSERT INTO TB_funcionário (nm_usuario, ds_email, ds_senha)
 
 
 -- CSU01:: efetuar login
-select ID_funcionario 	id,
+select ID_funcionário 	id,
        nm_usuario		nome,
        ds_email			email
   from tb_usuario
@@ -29,7 +33,7 @@ DELETE FROM TB_Agendamento
       
 -- CSU04:: pesquisar data da consulta
 SELECT  ID_agendamento		'id',
-	   NM_paciente  	'nome',p
+	   NM_paciente  	'nome',
         DS_CPF          'cpf',
         DS_servico     	'servico'
   FROM TB_agendamento
@@ -45,3 +49,7 @@ UPDATE TB_agendamento
  
   
   
+
+
+
+
