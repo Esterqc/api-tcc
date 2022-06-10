@@ -4,10 +4,10 @@ import {con  } from './connection.js';
 export async function login(email, senha){
 
     const comando = 
-        `select ID_funcionário 	id,
+        `select ID_funcionario 	id,
         nm_usuario		    nome,
         ds_email			email
-        from tb_usuario
+        from tb_funcionário
     where ds_email 		    = ?
     and ds_senha			= ?`;
 
